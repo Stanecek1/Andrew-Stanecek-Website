@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Art from './Art/Containers/Art';
+import GameDevelopment from './GameDevelopment/Containers/GameDevelopment'
+import Menu from './Menu';
+import {Route, Routes} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container-fluid'>
+      <div className='row'>
+        <div className='col-2 p-0'>
+          <Menu></Menu>
+        </div>
+        <div className='col-10 p-0'>
+          <Routes>
+            <Route path = "/" element={<Art/>}/>
+            <Route path = "/Art" element={<Art/>}/>
+            {/* <Route path = "/Software" element={<Software/>}/> */}
+            {/* <Route path = "Music" element={<Music/>}/> */}
+            <Route path = "/GameDevelopment" element={<GameDevelopment/>}/>
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }

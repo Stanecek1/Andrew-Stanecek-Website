@@ -1,0 +1,6 @@
+{
+    "art" : [
+        {"title": "Plague", "url": "/src/Art/Images/Plague.png"},
+        {"title": "Drift", "url": "../Images/SeeingTree.png"}
+    ]
+}

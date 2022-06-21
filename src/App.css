@@ -1,5 +1,8 @@
+
+
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -36,3 +39,66 @@
     transform: rotate(360deg);
   }
 }
+
+.card-title{
+  font-size: 600%;
+  justify-content: center;  
+}
+
+.red-drop-shadow{
+  text-shadow: 5px 5px #ff0000
+}
+
+.black-drop-shadow{
+  text-shadow: 5px 5px #000000
+}
+
+.card-body{
+  background-color: crimson;
+}
+
+.card-title{
+  color: white;
+
+}
+
+.text-on-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.full-card{
+  margin-bottom: 5px;
+}
+
+.menu{
+  background-color: rgb(1, 17, 160);
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.6vw;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  color: white;
+  text-shadow: 2px 2px #000000
+}
+
+.nav{
+  font-size: .9vw;
+}
+
+.nav a{
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px #000000
+}
+
+
+
+
+
+
