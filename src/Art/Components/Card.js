@@ -17,7 +17,7 @@ render() {
                         <div className="col-xs-5 col-sm-4 col-md-4 col-lg-4 p-0">
                             <img src={image} className="card-img"></img>
                         </div>
-                        <div className="card-body col-xs-7 col-sm-4 col-md-4 col-lg-4 d-flex align-items-center" style={{"background-color" : color}}>
+                        <div className="card-body col-xs-7 col-sm-4 col-md-4 col-lg-4 d-flex align-items-center" style={{"backgroundColor" : color}}>
                             <h5 className="card-title mx-auto black-drop-shadow">{title}</h5> 
                         </div>
                     </div>
@@ -30,7 +30,7 @@ render() {
             <div className="container-fluid">
                 <div className="card border-0">
                     <div className="row " >
-                        <div className="card-body col-xs-7 col-sm-4 col-md-4 col-lg-4 d-flex align-items-center "  style={{"background-color" : color}} >
+                        <div className="card-body col-xs-7 col-sm-4 col-md-4 col-lg-4 d-flex align-items-center "  style={{"backgroundColor" : color}} >
                             <h5 className="card-title mx-auto red-drop-shadow">{title}</h5> 
                         </div>
                         <div className="col-xs-5 col-sm-4 col-md-4 col-lg-4 p-0" >

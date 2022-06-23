@@ -14,15 +14,16 @@ class Software extends React.Component {
         const file = this.fileInput.current.files[0]
 
         //get secure ulr from server
-        await fetch("http://localhost:8080/s3Url").then(res => {
 
-            if (res.status !== 200){
-                throw new Error(`There was an error with status code ${res.status}`)
-            }
-            else console.log("test" + res.url);
+        const url = await fetch("http://localhost:8080/s3Url").then(res => res.json());
+        console.log(url.url);
+        // const url = await fetch("http://localhost:8080/s3Url").then(res => {
 
-            
-        });
+        //     if (res.status !== 200){
+        //         throw new Error(`There was an error with status code ${res.status}`)
+        //     }
+        //     else console.log("test" + res.url);
+        // });
 
         // await fetch("/s3Url").then(res => {
         //     console.log(res);
