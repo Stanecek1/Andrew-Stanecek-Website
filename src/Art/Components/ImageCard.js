@@ -6,9 +6,6 @@ class ImageCard extends Component {
 render() {
     const image = this.props.image;
     const title = this.props.title;
-    const order = this.props.order;
-    const color = this.props.color;
-
     return (
         <div className="Image-card p-3">
             <ImgOverlay
