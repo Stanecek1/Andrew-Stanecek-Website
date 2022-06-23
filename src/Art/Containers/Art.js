@@ -2,6 +2,7 @@
 import '../../App.css';
 import Card from '../Components/Card';
 import SlideShowCard from "../Components/SlideShowCard";
+import ImageCard from "../Components/ImageCard";
 import Plague from "../Images/Plague.png";
 import Fox from "../Images/Fox Geo.png"
 import Tree from "../Images/SeeingTree.png"
@@ -58,6 +59,21 @@ function Art() {
     >
 
       <div className="App pt-4">
+
+      
+        <div className='row border m-2'>
+          <div className='col-4'>
+            <ImageCard title="Panic" image = {Skeleton}></ImageCard>
+          </div>
+          <div className='col-4 Image-card'>
+            <ImageCard title="Dirft" image = {Tree}></ImageCard>
+          </div>
+          <div className='col-4'>
+            <ImageCard title="Fox" image = {Fox}></ImageCard>
+          </div>
+        </div>
+
+        
         <div className='full-card'>
           <Card color = "Crimson" order = "1" title = "Toxic" image = {Plague}></Card>
         </div>
