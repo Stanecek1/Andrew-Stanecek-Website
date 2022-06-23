@@ -10,6 +10,7 @@ import Skeleton from "../Images/Space Skeleton.png"
 import Flower from "../Images/FlowerMouth2.png";
 import Pizza from "../Images/Pizza.png";
 import Pills from "../Images/Pills.png"
+import Banner1 from "../Images/Banner1.png";
 import Background from "../Images/Background/PlagueBackground.png"
 import ImageContainer from '../Components/ImageContainer';
 
@@ -64,6 +65,18 @@ function Art() {
       //   color: "#f5f5f5"
       // }}
     >
+
+      <div class="bg_image"
+      style={{
+        backgroundImage:  `url(${Banner1})`,
+        backgroundSize: "cover",
+        height: "10vw",
+        color: "#f5f5f5"
+      }}>
+        
+      </div>
+
+      
       <ImageContainer image1={panicIC} image2={driftIC} image3={foxIC}/>
       <ImageContainer image1={plagueIC} image2={lostColletionIC} image3={plagueIC}/>
       {/* <div className="App pt-4">        
