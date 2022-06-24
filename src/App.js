@@ -15,7 +15,7 @@ function App() {
         </div>
         <div className='col-10 p-0'>
           <Routes>
-            <Route path = "/" element={<Art/>}/>
+            {/* <Route path = "/" element={<Art/>}/> */}
             <Route path = "/Art" element={<Art/>}/>
             <Route path = "/Software" element={<Software/>}/>
             {/* <Route path = "Music" element={<Music/>}/> */}

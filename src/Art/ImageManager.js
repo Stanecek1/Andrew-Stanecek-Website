@@ -1,15 +1,29 @@
+import React, {useEffect} from 'react';
 
-import $ from 'jquery';
-import fileToRead from "./Data/ArtData.json"
-var data = require('./Data/ArtData.json');
-class ImageManager{
-    constructor(){
-    }
+class ImageManager {
+    getData=()=>{
+        fetch('ArtData.json'
+        ,{
+          headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+           }
+        }
+        )
+          .then(function(response){
+            console.log(response)
+            return response.json();
+          })
+          .then(function(myJson) {
+            console.log("here" + myJson.art[0].title)
+            return myJson;
+            
+          });
+      }
+    // useEffect(()=>{
+    //     getData();
+    //   },[]);
 
-    getData(){
-        
-        return data.art;
-    }
 }
 
     

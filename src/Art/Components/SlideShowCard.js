@@ -17,7 +17,7 @@ class SlideShowCard extends Component {
         //const images = this.props.images;
         const images = this.props.images;
         return (
-            <div className="Image-card p-3">
+            <div className="innerSlideShow p-3">
                 <Fade>
                     {images.map((Image, index) => (
                     <div className="each-fade" key={index}>

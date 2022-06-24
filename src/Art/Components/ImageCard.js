@@ -7,7 +7,7 @@ render() {
     const image = this.props.image;
     const title = this.props.title;
     return (
-        <div className="Image-card p-3">
+        <div className="inner p-3">
             <ImgOverlay
                 imgSrc={image}
                 bgColor='rgba(52, 52, 52, 0.8)'

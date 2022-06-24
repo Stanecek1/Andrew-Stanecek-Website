@@ -1,6 +1,5 @@
 
 import '../../App.css';
-import Card from '../Components/Card';
 import SlideShowCard from "../Components/SlideShowCard";
 import ImageCard from "../Components/ImageCard";
 import Plague from "../Images/Plague.png";
@@ -11,61 +10,58 @@ import Flower from "../Images/FlowerMouth2.png";
 import Pizza from "../Images/Pizza.png";
 import Pills from "../Images/Pills.png"
 import Banner1 from "../Images/Banner1.png";
-import Background from "../Images/Background/PlagueBackground.png"
 import ImageContainer from '../Components/ImageContainer';
-
+import GoodFight from "../Images/Good Fight.png"
 import ImageManager from '../ImageManager';
-
-// var imageManager = new ImageManager();
-
-// var imageData = imageManager.getData();
-// console.log(imageData);
-// const images = [];
+import React, { useState, useEffect } from 'react';
 
 
-// imageData.forEach((data) => {
-//   var i = 1;
-//   images.push(
-//     <div className='full-card'>
-//       <Card color = "Crimson" order = {i} title = {data.} image = {Plague}></Card>
-//     </div>)
-//   i++;
-//   console.log(data);
-
-//})
-const fadeImages = [
-  {
-  url: Flower,
-  caption: 'Run Flowers'
-  },
-  {
-  url: Pills,
-  caption: 'UWMA'
-  },
-  {
-  url: Pizza,
-  caption: 'Pizza Peye'
-  },
-];
 
 function Art() {
+  const [data,setData]=useState([]);
+  const getData =()=>{
+    fetch('ArtData.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+      .then(function(response){
+        console.log(response)
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log("here" + myJson.art[0].title)
+        setData(myJson.art);
+      });
+  }
+  
+  useEffect(() => {
+    getData();
+  }, []);
 
-  let plagueIC = <ImageCard title="Plague" image = {Plague}></ImageCard>
-  let panicIC = <ImageCard title="Panic" image = {Skeleton}></ImageCard>
-  let driftIC = <ImageCard title="Dirft" image = {Tree}></ImageCard>
-  let foxIC = <ImageCard title="Fox" image = {Fox}></ImageCard>
-  let lostColletionIC = <SlideShowCard images = {fadeImages} order = "1" color = "Crimson" title = "Lost Collection"></SlideShowCard>
+  const fadeImages = [
+    {
+    url: Flower,
+    caption: 'Run Flowers'
+    },
+    {
+    url: Pills,
+    caption: 'UWMA'
+    },
+    {
+    url: Pizza,
+    caption: 'Pizza Peye'
+    },
+  ];
+
+  let images1 = [ <ImageCard title="Dirft" image = {Tree}></ImageCard>, <ImageCard title="Panic" image = {Skeleton}></ImageCard>, <ImageCard title="FOX" image = {Fox}></ImageCard>];
+  let images2 = [<ImageCard title="Plague" image = {Plague}></ImageCard>, <SlideShowCard images = {fadeImages} order = "1" color = "Crimson" title = "Lost Collection"></SlideShowCard>, <ImageCard title="Good Fight" image = {GoodFight}></ImageCard> ];
+
   return (
-    <div 
-      // class="bg_image"
-      // style={{
-      //   backgroundImage:  `url(${Background})`,
-      //   backgroundSize: "cover",
-      //   height: "100%",
-      //   color: "#f5f5f5"
-      // }}
-    >
-
+    <div>
       <div class="bg_image"
       style={{
         backgroundImage:  `url(${Banner1})`,
@@ -73,29 +69,12 @@ function Art() {
         height: "10vw",
         color: "#f5f5f5"
       }}>
-        
+        <div className="App">
+          {data.length == 0? <div></div> : <h2>{data[0].title}</h2>}
+        </div>
       </div>
-
-      
-      <ImageContainer image1={panicIC} image2={driftIC} image3={foxIC}/>
-      <ImageContainer image1={plagueIC} image2={lostColletionIC} image3={plagueIC}/>
-      {/* <div className="App pt-4">        
-        <div className='full-card'>
-          <Card color = "Crimson" order = "1" title = "Toxic" image = {Plague}></Card>
-        </div>
-        <div className='full-card'>
-          <Card color = "Black" order = "0" title = "Drift" image = {Tree}></Card>
-        </div>
-        <div className='full-card'>
-          <Card color = "Crimson" order = "1" title = "Panic" image = {Skeleton}></Card>
-        </div>
-        <div className='full-card'>
-          <Card color = "Black" order = "0" title = "Geo" image = {Fox}></Card>
-        </div>
-        <div className='full-card'>
-          <SlideShowCard images = {fadeImages} order = "1" color = "Crimson" title = "Lost Collection"></SlideShowCard>
-        </div>
-      </div> */}
+        <ImageContainer images = {images1}/>
+        <ImageContainer images = {images2}/>
     </div>
   );
 }
