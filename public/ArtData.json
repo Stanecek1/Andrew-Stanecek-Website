@@ -1,6 +1,10 @@
 {
     "art" : [
-        {"title": "Plague", "url": "../Images/Plague.png"},
-        {"title": "Drift", "url": "../Images/SeeingTree.png"}
+        {"title": "Plague", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Plague.png"},
+        {"title": "Drift", "url": "https://stanecek-website-bucket.s3.amazonaws.com/SeeingTree.png"},
+        {"title": "Panic", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Space+Skeleton.png"},
+        {"title": "FOX", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Fox+Geo.png"},
+        {"title": "Good Fight", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Good+Fight.png"},
+        {"title": "Skate", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Skate.png"}
     ]
 }

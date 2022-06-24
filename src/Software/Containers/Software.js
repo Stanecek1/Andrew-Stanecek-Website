@@ -16,21 +16,21 @@ class Software extends React.Component {
         //get secure ulr from server
 
         const url = await fetch("http://localhost:8080/s3Url").then(res => res.json());
-        console.log(url.url);
-        // const url = await fetch("http://localhost:8080/s3Url").then(res => {
-
-        //     if (res.status !== 200){
-        //         throw new Error(`There was an error with status code ${res.status}`)
-        //     }
-        //     else console.log("test" + res.url);
-        // });
-
-        // await fetch("/s3Url").then(res => {
-        //     console.log(res);
-        // })
-        //console.log(url);
+        console.log(url);
 
         //post the image directly tot he s3 bucket
+        fetch(url.url, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "multipart/form-data"
+            },
+            body: file
+        })
+
+        
+
+        const imageUrl = url.url.split('?')[0]
+        console.log(imageUrl);
 
         //post request to my server  to store any extra data
     }

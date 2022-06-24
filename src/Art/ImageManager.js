@@ -1,7 +1,18 @@
-import React, {useEffect} from 'react';
 
-class ImageManager {
+import React, { useState, useEffect } from 'react';
+
+class ImageManager extends React.Component {
+    // const [data,setData]=useState([]);
+    constructor(props){
+        super(props);
+        this.state ={
+            data: ""
+        }
+    }
     getData=()=>{
+        this.setState({data: "yes"}, () => {
+            console.log("data " + this.state.data);
+        })
         fetch('ArtData.json'
         ,{
           headers : { 
@@ -15,8 +26,12 @@ class ImageManager {
             return response.json();
           })
           .then(function(myJson) {
-            console.log("here" + myJson.art[0].title)
+            //console.log("here" + myJson.art[0].title)
+            this.setState({data: myJson.art}, () => {
+                console.log("data " + this.state.data);
+            });
             return myJson;
+            
             
           });
       }
@@ -25,6 +40,7 @@ class ImageManager {
     //   },[]);
 
 }
+
 
     
 
