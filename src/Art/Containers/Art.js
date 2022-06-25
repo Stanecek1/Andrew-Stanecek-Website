@@ -18,7 +18,9 @@ import React, { useState, useEffect } from 'react';
 function Art() {
   // const im = new ImageManager();
   //const [data,setData]=useState([]);
-  const [imgList,setimgList]=useState([]);
+  const [imgList,setImgList]=useState([]);
+
+  //get image data from json file
   const getData =()=>{
     fetch('ArtData.json'
     ,{
@@ -26,22 +28,19 @@ function Art() {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
        }
-    }
-    )
+    })
+      //parse json data
       .then(function(response){
-        console.log(response)
         return response.json();
       })
+      //save data to state
       .then(function(myJson) {
-        console.log("here" + myJson.art[0].title)
-        //setData(myJson.art);
         let list = [];
         myJson.art.forEach(element => {
           console.log(element.title);
           list = list.concat(<ImageCard title={element.title} image = {element.url}></ImageCard>)
         });
-        setimgList(list);
-
+        setImgList(list);
       });
   }
   
