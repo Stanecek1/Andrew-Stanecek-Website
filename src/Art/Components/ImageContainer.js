@@ -20,22 +20,16 @@ class ImageContainer extends Component {
         // const image3 = this.props.image3;
         const images = this.props.images;
         //this.props.image1.title;
-        function getLargestImage(){
-          let i = 0; 
-          
-        }
+        images.forEach(element => {
+          <div></div>
+        });
 
         return (
+
         <div className='row image-container m-2'>
-          <div className='outer col-4'>
-            {images[0]}
-          </div>
-          <div className='outer col-4'>
-            {images[1]}
-          </div>
-          <div className='outer  col-4'>
-            {images[2]}
-          </div>
+          {images.map(item => {
+            return(<div className='outer col-3'> {item} </div>);
+          })}
         </div>
         );
     }

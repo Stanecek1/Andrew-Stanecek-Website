@@ -99,8 +99,7 @@
 
 .image-container{
   background-color: rgb(224, 224, 224);
-  
-
+  border: 1px solid;
 }
 
 .Image-card{
@@ -111,7 +110,7 @@
 }
 
 .outer{
-  height: 38vw;
+  height: 26vw;
   position: relative;
   /* border: 1px solid; */
 
