@@ -15,7 +15,7 @@ class Software extends React.Component {
 
         //get secure ulr from server
 
-        const url = await fetch("http://localhost:8080/s3Url").then(res => res.json());
+        const url = await fetch("http://localhost:8080/s3Url");
         console.log(url);
 
         //post the image directly tot he s3 bucket

@@ -21,7 +21,6 @@ const s3 = new aws.S3({
 
 export async function generateUploadURL(){
     try{
-        console.log("generateUploadURl function accessed");
         const rawBytes = await randomBytes(16);
         const imageName = rawBytes.toString('hex');
 
