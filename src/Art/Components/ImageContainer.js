@@ -14,15 +14,7 @@ class ImageContainer extends Component {
         };
     }
     render() {
-        //const images = this.props.images;
-        // const image1 = this.props.image1;
-        // const image2 = this.props.image2;
-        // const image3 = this.props.image3;
         const images = this.props.images;
-        //this.props.image1.title;
-        images.forEach(element => {
-          <div></div>
-        });
 
         return (
 

@@ -12,60 +12,19 @@ import Pills from "../Images/Pills.png"
 import Banner1 from "../Images/Banner1.png";
 import ImageContainer from '../Components/ImageContainer';
 //import GoodFight from "../Images/Good Fight.png"
-//import ImageManager from '../ImageManager';
+import getData from '../ImageManager';
 import React, { useState, useEffect } from 'react';
 
 function Art() {
-  // const im = new ImageManager();
-  //const [data,setData]=useState([]);
-  const [imgList,setImgList]=useState([]);
 
-  //get image data from json file
-  const getData =()=>{
-    fetch('ArtData.json'
-    ,{
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    })
-      //parse json data
-      .then(function(response){
-        return response.json();
-      })
-      //save data to state
-      .then(function(myJson) {
-        let list = [];
-        myJson.art.forEach(element => {
-          console.log(element.title);
-          list = list.concat(<ImageCard title={element.title} image = {element.url}></ImageCard>)
-        });
-        setImgList(list);
-      });
-  }
+  const [imgList,setImgList]=useState([]);
   
   useEffect(() => {
-    //im.getData();
-    getData();
+    getData().then(res => {
+      setImgList(res);
+    });
+
   }, []);
-
-  const fadeImages = [
-    {
-    url: Flower,
-    caption: 'Run Flowers'
-    },
-    {
-    url: Pills,
-    caption: 'UWMA'
-    },
-    {
-    url: Pizza,
-    caption: 'Pizza Peye'
-    },
-  ];
-
-  // let images1 = [ <ImageCard title="Dirft" image = {Tree}></ImageCard>, <ImageCard title="Panic" image = {Skeleton}></ImageCard>, <ImageCard title="FOX" image = {Fox}></ImageCard>];
-  // let images2 = [<ImageCard title="Plague" image = {Plague}></ImageCard>, <SlideShowCard images = {fadeImages} order = "1" color = "Crimson" title = "Lost Collection"></SlideShowCard>, <ImageCard title="Good Fight" image = {GoodFight}></ImageCard> ];
 
   return (
     <div>
@@ -78,7 +37,6 @@ function Art() {
       }}>
       </div>
         <ImageContainer images = {imgList}/>
-        {/* <ImageContainer images = {images2}/> */}
     </div>
   );
 }

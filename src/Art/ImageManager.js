@@ -1,50 +1,34 @@
 
 import React, { useState, useEffect } from 'react';
+import ImageCard from "./Components/ImageCard";
 
-class ImageManager extends React.Component {
-    // const [data,setData]=useState([]);
-    constructor(props){
-        super(props);
-        this.state ={
-            data: ""
-        }
-    }
-    getData=()=>{
-        this.setState({data: "yes"}, () => {
-            console.log("data " + this.state.data);
-        })
-        fetch('ArtData.json'
-        ,{
-          headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-           }
-        }
-        )
-          .then(function(response){
-            console.log(response)
-            return response.json();
-          })
-          .then(function(myJson) {
-            //console.log("here" + myJson.art[0].title)
-            this.setState({data: myJson.art}, () => {
-                console.log("data " + this.state.data);
-            });
-            return myJson;
-            
-            
-          });
+const getData = function(){
+  return new Promise(function(resolve, reject){
+  let list = [];
+  fetch('ArtData.json'
+  ,{
+    headers : { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
       }
-    // useEffect(()=>{
-    //     getData();
-    //   },[]);
+  })
+    //parse json data
+    .then(function(response){
+      return response.json();
+    })
+    //save data to state
+    .then(function(myJson) {
+      myJson.art.forEach(element => {
+        list = list.concat(<ImageCard title={element.title} image = {element.url}></ImageCard>)
+      });
+      
+      resolve(list);
+    });
+  })
 
 }
 
+export default getData;
+
 
     
-
-
-
-
-export default ImageManager;
