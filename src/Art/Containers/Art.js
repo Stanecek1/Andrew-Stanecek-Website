@@ -50,7 +50,10 @@ function Art() {
       <div>
       {/* <Gallery renderImage={imageRenderer} photos={photoListt} /> */}
       </div>
-      <ImageContainer images = {imgList}/>
+      <div className='container-fluid'>
+        <ImageContainer images = {imgList}/>
+      </div>
+      
         
         {/* <PhotoProvider>
           <div>

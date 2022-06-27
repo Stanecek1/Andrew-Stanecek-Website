@@ -19,9 +19,9 @@ class ImageContainer extends Component {
 
         return (
 
-        <div className='row image-container m-2'>
+        <div className='row'>
           {images.map(item => {
-            return(<div className='outer col-3'> {item} </div>);
+            return(<div className='outer col-4 p-0'> {item} </div>);
           })}
         </div>
         );
