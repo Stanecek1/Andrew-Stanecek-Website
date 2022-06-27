@@ -48,9 +48,9 @@ function Art() {
       }}>
       </div>
       <div>
-      <Gallery renderImage={imageRenderer} photos={photoListt} />
+      {/* <Gallery renderImage={imageRenderer} photos={photoListt} /> */}
       </div>
-        {/* <ImageContainer images = {imgList}/> */}
+      <ImageContainer images = {imgList}/>
         
         {/* <PhotoProvider>
           <div>

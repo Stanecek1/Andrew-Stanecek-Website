@@ -19,8 +19,8 @@ const Test = ({ index, photo, margin, direction, top, left, selected }) => {
                 imgSrc={photo.src}
                 bgColor='rgba(52, 52, 52, 0.8)'
                 position='right'
-                width={photo.width}
-                height={photo.height}
+                width={photo.imgWidth}
+                height={photo.imgHeight}
                 opcaity="50%"
                 fSize='48px'
                 fColor="white"
