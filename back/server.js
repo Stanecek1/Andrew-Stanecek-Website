@@ -17,7 +17,10 @@ app.get('/s3Url', async (req, res) => {
 })
 
 app.get('/imageData', async (req, res) =>{
+    console.log("Image Data Accessed")
     res.send(imageData);
+    
 })
+
 
 app.listen(8080, () => console.log("Listening on port 8080"));

@@ -2,29 +2,40 @@
 import '../../App.css';
 //import SlideShowCard from "../Components/SlideShowCard";
 import ImageCard from "../Components/ImageCard";
-//import Plague from "../Images/Plague.png";
-//import Fox from "../Images/Fox Geo.png"
-//import Tree from "../Images/SeeingTree.png"
-//import Skeleton from "../Images/Space Skeleton.png"
-import Flower from "../Images/FlowerMouth2.png";
-import Pizza from "../Images/Pizza.png";
-import Pills from "../Images/Pills.png"
 import Banner1 from "../Images/Banner1.png";
 import ImageContainer from '../Components/ImageContainer';
-//import GoodFight from "../Images/Good Fight.png"
-import getData from '../ImageManager';
-import React, { useState, useEffect } from 'react';
+import {getData, getPhotoAlbumData} from '../ImageManager';
+import React, { useState, useEffect, useCallback } from 'react';
+import Gallery from 'react-photo-gallery-react17';
+import Test from '../Components/test';
+
+
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 function Art() {
 
   const [imgList,setImgList]=useState([]);
-  
+  const [photoListt,setPhotoList]=useState([]);
+  const [selectAll, setSelectAll] = useState(false);
+
   useEffect(() => {
     getData().then(res => {
       setImgList(res);
     });
 
+    getPhotoAlbumData().then(res => {
+      setPhotoList(res);
+    });
+
   }, []);
+
+  const imageRenderer = useCallback(
+    ({ index, left, top, key, containerHeight, photo }) => (
+      <Test photo={photo} />
+    ),
+    [selectAll]
+  );
+
 
   return (
     <div>
@@ -36,7 +47,20 @@ function Art() {
         color: "#f5f5f5"
       }}>
       </div>
-        <ImageContainer images = {imgList}/>
+      <div>
+      <Gallery renderImage={imageRenderer} photos={photoListt} />
+      </div>
+        {/* <ImageContainer images = {imgList}/> */}
+        
+        {/* <PhotoProvider>
+          <div>
+            {photoListt.map((item, index) => (
+            <PhotoView key={index} src={item.src}>
+              <img src={item.src} alt="" />
+            </PhotoView>
+            ))}
+          </div>
+        </PhotoProvider> */}
     </div>
   );
 }
