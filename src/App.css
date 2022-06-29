@@ -102,38 +102,16 @@
   border: 1px solid;
 }
 
-.Image-card{
-
-}
-
-.header{
-}
-
-.outer{
-  /* height: 26vw;
-  position: relative; */
-  /* border: 1px solid; */
-
-}
-
-.inner{
-  /* margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); */
-
-}
-
 .borderPicture{
   border: 1px solid;
 }
 
-.innerSlideShow{
-  /* margin: 0;
-  position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); */
+.img-overlay{
+  display: flex;
+}
+
+.picture-card{
+  background-color: #dddddd;
+  border: 2px solid;
 }
 

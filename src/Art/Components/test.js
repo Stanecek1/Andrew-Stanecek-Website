@@ -15,7 +15,8 @@ const Test = ({ index, photo, margin, direction, top, left, selected }) => {
         console.log(photo)
         return (
         <div>
-          <ImgOverlay
+          <ImgOverlay 
+                
                 imgSrc={photo.src}
                 bgColor='rgba(52, 52, 52, 0.8)'
                 position='right'

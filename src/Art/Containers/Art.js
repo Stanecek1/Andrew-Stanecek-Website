@@ -47,9 +47,9 @@ function Art() {
         color: "#f5f5f5"
       }}>
       </div>
-      <div>
-      {/* <Gallery renderImage={imageRenderer} photos={photoListt} /> */}
-      </div>
+      {/* <div>
+      <Gallery renderImage={imageRenderer} photos={photoListt} />
+      </div> */}
       <div className='container-fluid'>
         <ImageContainer images = {imgList}/>
       </div>

@@ -15,13 +15,11 @@ class ImageContainer extends Component {
     }
     render() {
         const images = this.props.images;
-        
-
         return (
 
         <div className='row'>
           {images.map(item => {
-            return(<div className='outer col-4 p-0'> {item} </div>);
+            return(<div className='outer col-4 p-0 picture-card'> {item} </div>);
           })}
         </div>
         );
