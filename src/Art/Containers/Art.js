@@ -2,12 +2,12 @@
 import '../../App.css';
 //import SlideShowCard from "../Components/SlideShowCard";
 import ImageCard from "../Components/ImageCard";
-import Banner1 from "../Images/Banner1.png";
 import ImageContainer from '../Components/ImageContainer';
 import {getData, getPhotoAlbumData} from '../ImageManager';
 import React, { useState, useEffect, useCallback } from 'react';
 import Gallery from 'react-photo-gallery-react17';
 import Test from '../Components/test';
+import Banner from '../../Shared/Banner';
 
 
 import { PhotoProvider, PhotoView } from 'react-photo-view';
@@ -39,14 +39,7 @@ function Art() {
 
   return (
     <div>
-      <div class="bg_image"
-      style={{
-        backgroundImage:  `url(${Banner1})`,
-        backgroundSize: "cover",
-        height: "10vw",
-        color: "#f5f5f5"
-      }}>
-      </div>
+      <Banner title="Strange Art" ></Banner>
       {/* <div>
       <Gallery renderImage={imageRenderer} photos={photoListt} />
       </div> */}
