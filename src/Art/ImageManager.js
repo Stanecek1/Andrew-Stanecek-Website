@@ -25,7 +25,7 @@ export const getPhotoAlbumData = function(){
       let photos = [];
       respone.art.forEach(element => {
         let data = {src: element.url , imgWidth: element.width, imgHeight: element.height, title: element.title}
-        console.log(data);
+        //console.log(data);
         photos = photos.concat(data)
       });
       resolve(photos); 
