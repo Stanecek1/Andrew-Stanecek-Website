@@ -28,7 +28,7 @@ function Art() {
   return (
     <div>
       <Banner title="Strange Art" ></Banner>
-      <div className='container-fluid'>
+      <div className='container-fluid background'>
         <Columns images = {photoList}/>
       </div>
     </div>
