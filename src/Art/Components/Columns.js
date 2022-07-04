@@ -34,7 +34,7 @@ const Columns = (props) => {
         for (let j = 0; j < columns.length; j++) {
             if (columns[j][i] != undefined){
                 vertical.push(
-                    <div>
+                    <div className='imgOverlay'>
                         <ImgOverlay
                             imgSrc={ columns[j][i].src}
                             bgColor='rgba(52, 52, 52, 0.8)'
