@@ -50,14 +50,14 @@
 }
 
 .card-body{
-  background-color: crimson;
+  background-color: rgb(255, 255, 255);
 }
 
 .card-title{
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 3vw;
   justify-content: center;  
-  text-shadow: 5px 5px #000000
+
 }
 
 .text-on-image {
