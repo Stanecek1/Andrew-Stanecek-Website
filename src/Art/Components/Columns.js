@@ -8,7 +8,6 @@ const Columns = (props) => {
     let t = 0;
     console.log("images: " + props.images)
     props.images.forEach(function(i, idx, array){
-        console.log(i);
         if (t == 3){
             t = 0;
             //add columns to rows

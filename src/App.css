@@ -40,10 +40,6 @@
   }
 }
 
-.card-title{
-  font-size: 600%;
-  justify-content: center;  
-}
 
 .red-drop-shadow{
   text-shadow: 5px 5px #ff0000
@@ -59,7 +55,9 @@
 
 .card-title{
   color: white;
-
+  font-size: 3vw;
+  justify-content: center;  
+  text-shadow: 5px 5px #000000
 }
 
 .text-on-image {
@@ -89,7 +87,7 @@
 }
 
 .nav{
-  font-size: .9vw;
+  font-size: .7vw;
 }
 
 .nav a{

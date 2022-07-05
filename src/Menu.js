@@ -20,7 +20,7 @@ class Menu extends Component {
                     <h3 className='title pt-5 pb-5  text-center'>Andrew Stanecek</h3>
                     <nav className="nav nav-pills flex-column p-4">
                         <CustomLink to="/Software"><SiVisualstudiocode/> Software</CustomLink>
-                        <CustomLink to="/Art"> <SiAdobecreativecloud/> Art</CustomLink>
+                        <CustomLink to="/Art"> <SiAdobecreativecloud/> Digital Art</CustomLink>
                         <CustomLink to="/GameDevelopment"> <GiGamepad/> Game Development</CustomLink>
                         <CustomLink to="/Music"> <GiMusicSpell/> Music</CustomLink>
                     </nav>

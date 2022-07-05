@@ -1,7 +1,6 @@
 import express from "express"
 import {generateUploadURL} from './s3.js'
 import cors from "cors";
-import fetch from 'node-fetch';
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
 const require = createRequire(import.meta.url); // construct the require method
 const imageData = require("./public/ArtData")
