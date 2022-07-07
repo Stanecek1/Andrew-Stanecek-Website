@@ -4,6 +4,7 @@ import cors from "cors";
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
 const require = createRequire(import.meta.url); // construct the require method
 const imageData = require("./public/ArtData")
+const softwareData = require("./public/SoftwareData")
 
 const app = express();
 
@@ -16,9 +17,14 @@ app.get('/s3Url', async (req, res) => {
 })
 
 app.get('/imageData', async (req, res) =>{
-    console.log("Image Data Accessed")
+    console.log("Image Data Accessed");
     res.send(imageData);
     
+})
+
+app.get('/softwareData', async (req, res) => {
+    console.log("Software Data Accessed");
+    res.send({softwareData});
 })
 
 

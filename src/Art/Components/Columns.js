@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { ImgOverlay } from 'image-overlay-react'
+import { ImgOverlay } from 'image-overlay-react';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
+
+function popUp(index){
+    console.log(index);
+    // setModalOpen(true);
+}
 //alignes the photos in colums with the newest on the top
 const Columns = (props) => {    
+    const [index,setIndex]=useState(0);
+    const [modalOpen,setModalOpen]=useState(false);
+
+
     let rows = [];
     let columns = [];
     let t = 0;
-    console.log("images: " + props.images)
+    //console.log("images: " + props.images)
     props.images.forEach(function(i, idx, array){
         if (t == 3){
             t = 0;
@@ -15,12 +26,12 @@ const Columns = (props) => {
             rows = [];
         }
         if (idx === array.length -1){
-            let photo = {title: i.title, src: i.src}
+            let photo = {title: i.title, src: i.src, index: idx}
             rows.push(photo);
             columns.push(rows);
         }
         else {
-            let photo = {title: i.title, src: i.src}
+            let photo = {title: i.title, src: i.src, index: idx}
             rows.push(photo);
             t++;
         }
@@ -33,7 +44,11 @@ const Columns = (props) => {
         for (let j = 0; j < columns.length; j++) {
             if (columns[j][i] != undefined){
                 vertical.push(
-                    <div className='imgOverlay'>
+                    <div onClick={() => { 
+                        setModalOpen(true);
+                        setIndex(columns[j][i].index);
+                        console.log(columns[j][i].index);
+                        }} className='imgOverlay'>
                         <ImgOverlay
                             imgSrc={ columns[j][i].src}
                             bgColor='rgba(52, 52, 52, 0.8)'
@@ -44,7 +59,7 @@ const Columns = (props) => {
                             fSize='48px'
                             fColor="white"
                             >
-                            { columns[j][i].title}
+                            { columns[j][i].title} 
                         </ImgOverlay>
                     </div>
                 )
@@ -53,18 +68,32 @@ const Columns = (props) => {
         horizontal.push(vertical);
     }
     return (
-        <div className='row'>
-            <div className='col-4 p-0'>
-                {horizontal[0]}
+        <div>
+            <div className='row'>
+                <div className='col-4 p-0'>
+                    {horizontal[0]}
+                </div>
+                <div className='col-4 p-0'>
+                    {horizontal[1]}
+                </div>
+                <div className='col-4 p-0'>
+                    {horizontal[2]}
+                </div>
             </div>
-            <div className='col-4 p-0'>
-                {horizontal[1]}
-            </div>
-            <div className='col-4 p-0'>
-                {horizontal[2]}
+            <div>
+                {modalOpen && <Lightbox
+                    imageTitle={props.images[index].title}
+                    onCloseRequest={() => setModalOpen(false)}
+                    mainSrc={props.images[index].src}
+                    nextSrc={props.images[index + 1 == props.images.length ? 0 : index + 1].src}
+                    prevSrc={props.images[index - 1 == -1 ? props.images.length -1 : index - 1].src}
+                    onMovePrevRequest={() => setIndex(index - 1 == -1 ? props.images.length -1 : index - 1)}
+                    onMoveNextRequest={() => setIndex(index + 1 == props.images.length ? 0 : index + 1)}
+                />}
             </div>
         </div>
     );
+    
 }
 
 export default Columns;

@@ -1,0 +1,6 @@
+{
+    "projects" : [
+        {"title": "This Website", "body": "This website was developed using Node.JS, React, Express, AWS, and Javascript", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Software/Diagram1.png"},
+        {"title": "Pokemon Wiki", "body": "This was my first React project, and was a showcase for my last job, proving i learned all the topics they wanted me to learn.", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Software/allSearches.png"}
+    ]
+}
