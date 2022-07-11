@@ -34,7 +34,6 @@ export const getPhotoAlbumData = function(){
 }
 
 export const getSoftwareData = function(){
-  console.log("here")
   return new Promise( async function(resolve, reject){
     await fetch("http://localhost:8080/softwareData")
     .then(res => res.json())
@@ -42,8 +41,7 @@ export const getSoftwareData = function(){
       console.log("Software Response: " + response);
       let softwareData = [];
       response.softwareData.projects.forEach(element => {
-        let data = {src: element.url, body: element.body, title: element.title}
-        //console.log(data);
+        let data = {src: element.urls, body: element.body, title: element.title}
         softwareData = softwareData.concat(data)
       });
       resolve(softwareData); 

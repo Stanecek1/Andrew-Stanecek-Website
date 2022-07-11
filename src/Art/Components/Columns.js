@@ -3,11 +3,6 @@ import { ImgOverlay } from 'image-overlay-react';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
-
-function popUp(index){
-    console.log(index);
-    // setModalOpen(true);
-}
 //alignes the photos in colums with the newest on the top
 const Columns = (props) => {    
     const [index,setIndex]=useState(0);
@@ -44,11 +39,9 @@ const Columns = (props) => {
         for (let j = 0; j < columns.length; j++) {
             if (columns[j][i] != undefined){
                 vertical.push(
-                    <div onClick={() => { 
-                        setModalOpen(true);
-                        setIndex(columns[j][i].index);
-                        console.log(columns[j][i].index);
-                        }} className='imgOverlay'>
+                    // div onClick funtion allows users to click image and expand
+                    //ImgOverlay allows the use of title for onHover
+                    <div onClick={() => { setModalOpen(true); setIndex(columns[j][i].index); }} className='imgOverlay'>
                         <ImgOverlay
                             imgSrc={ columns[j][i].src}
                             bgColor='rgba(52, 52, 52, 0.8)'
@@ -59,7 +52,7 @@ const Columns = (props) => {
                             fSize='48px'
                             fColor="white"
                             >
-                            { columns[j][i].title} 
+                            {columns[j][i].title} 
                         </ImgOverlay>
                     </div>
                 )
