@@ -15,7 +15,7 @@ function Software () {
 
     return (
         <div>
-            <Banner title="Software" />
+            {/* <Banner title="Software" /> */}
             <div>
             {softwareList.map(function(object, i){
                 return <SoftwareCard data={object} />;
@@ -23,7 +23,6 @@ function Software () {
             </div>
         </div>
     );
-    
 }
 
 export default Software;

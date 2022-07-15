@@ -1,22 +1,6 @@
-
-import React, { useState, useEffect } from 'react';
-import ImageCard from "./Components/ImageCard";
 import fetch from 'cross-fetch';
 
-// export const getData = function(){
-//   return new Promise( async function(resolve, reject){
-//   let list = [];
-//   await fetch("http://localhost:8080/imageData")
-//     .then(res => res.json())
-//     .then(function(respone){
-//       respone.art.forEach(element => {
-//         list = list.concat(<ImageCard title={element.title} image = {element.url}></ImageCard>)      
-//       });
-//       resolve(list);
-//     });
-//   })
-// }
-
+//function to get the art data json file from the server and return it as array of objects
 export const getPhotoAlbumData = function(){
   return new Promise( async function(resolve, reject){
   await fetch("http://localhost:8080/imageData")
@@ -33,6 +17,7 @@ export const getPhotoAlbumData = function(){
   })
 }
 
+//function to get the software data json file from the server and return it as array of objects
 export const getSoftwareData = function(){
   return new Promise( async function(resolve, reject){
     await fetch("http://localhost:8080/softwareData")
@@ -48,8 +33,3 @@ export const getSoftwareData = function(){
     });
   })
 }
-
-
-
-
-    

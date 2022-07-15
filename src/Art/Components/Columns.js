@@ -8,7 +8,6 @@ const Columns = (props) => {
     const [index,setIndex]=useState(0);
     const [modalOpen,setModalOpen]=useState(false);
 
-
     let rows = [];
     let columns = [];
     let t = 0;
@@ -86,7 +85,6 @@ const Columns = (props) => {
             </div>
         </div>
     );
-    
 }
 
 export default Columns;

@@ -143,3 +143,16 @@
   width: 100%;
 }
 
+.HomeBackground{
+  background-color: #67eaf5;
+  height: 100vh;
+}
+
+.sunflower{
+  height: 25vh;
+  width: 25vh;
+  margin-top: 2vh;
+  margin-right: 4vh;
+}
+
+

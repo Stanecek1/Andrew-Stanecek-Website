@@ -4,6 +4,8 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 const SoftwareCard = (props) => {    
     
+    //Image gallery take an array of objects with a few different parameters
+    //but all we need is the "original" parameter for the srcs of the gallery 
     let images = [];
     props.data.src.forEach(element => {
         let src = {original: element}

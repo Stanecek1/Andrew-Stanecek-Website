@@ -3,7 +3,7 @@
     [
         {
             "title": "This Website",
-            "body": "This website was developed using Node.JS, React, Express, AWS, and Javascript",
+            "body": "This website is my latest project was developed using Node.JS, React, Express, AWS, and Javascript",
             "urls": 
             [ 
                 "https://stanecek-website-bucket.s3.amazonaws.com/Software/Diagram1.png",
@@ -13,7 +13,7 @@
 
         {
             "title": "Pokemon Wiki", 
-            "body": "This was my first React project, and was a showcase for my last job, proving i learned all the topics they wanted me to learn.", 
+            "body": "For my first web project, I wanted to create an application that utilized an existing API to receive data, manage it with objects and display it in an intuitive and interesting way. I stumbled upon a Pokémon API during my search and found it to be one of the most unique and interesting APIs to work with. Three endpoints are utilized for the user to interact with: Pokémon, Abilities and Items. The app uses HTTP requests to communicate with the API and breaks the received data into objects to be displayed.", 
             "urls": 
             [
                 "https://stanecek-website-bucket.s3.amazonaws.com/Software/allSearches.png",
