@@ -4,6 +4,7 @@ import GameDevelopment from './GameDevelopment/Containers/GameDevelopment'
 import Software from './Software/Containers/Software';
 import Menu from './Menu';
 import Home from './Home/Containers/Home';
+import Music from './Music/Containers/Music';
 import {Route, Routes} from "react-router-dom";
 
 function App() {
@@ -11,10 +12,10 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path = "/" element={<Home/>}/>
+        <Route path = "/" element={<Art/>}/>
         <Route path = "/Art" element={<Art/>}/>
         <Route path = "/Software" element={<Software/>}/>
-        {/* <Route path = "Music" element={<Music/>}/> */}
+        <Route path = "Music" element={<Music/>}/>
         <Route path = "/GameDevelopment" element={<GameDevelopment/>}/>
       </Routes>
     </div>

@@ -13,7 +13,7 @@ const Columns = (props) => {
     let t = 0;
     //console.log("images: " + props.images)
     props.images.forEach(function(i, idx, array){
-        if (t == 3){
+        if (t == 4){
             t = 0;
             //add columns to rows
             columns.push(rows);
@@ -32,7 +32,7 @@ const Columns = (props) => {
     })
     //holds the rows
     let horizontal = [];
-    for (let i = 0; i < 3; i++){
+    for (let i = 0; i < 4; i++){
         //holds the columns
         let vertical = [];
         for (let j = 0; j < columns.length; j++) {
@@ -62,14 +62,17 @@ const Columns = (props) => {
     return (
         <div>
             <div className='row'>
-                <div className='col-4 p-0'>
+                <div className='col-3 p-0'>
                     {horizontal[0]}
                 </div>
-                <div className='col-4 p-0'>
+                <div className='col-3 p-0'>
                     {horizontal[1]}
                 </div>
-                <div className='col-4 p-0'>
+                <div className='col-3 p-0'>
                     {horizontal[2]}
+                </div>
+                <div className='col-3 p-0'>
+                    {horizontal[3]}
                 </div>
             </div>
             <div>

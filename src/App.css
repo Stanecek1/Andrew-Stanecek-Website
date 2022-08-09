@@ -154,5 +154,18 @@
   margin-top: 2vh;
   margin-right: 4vh;
 }
+.flex-container {
+  display: flex;
+}
 
+.flex-child {
+  flex: 2;
+  border: 2px solid black;
+  text-align: center;
+  display: f;
+}  
+
+.temp{
+
+}
 

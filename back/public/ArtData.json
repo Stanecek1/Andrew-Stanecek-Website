@@ -7,6 +7,7 @@
         {"title": "Plague", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Plague.png", "height": 333, "width": 333},
         {"title": "Skate", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Skate.png", "height": 1800, "width": 2400},
         {"title": "Good Fight", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Good+Fight.png", "height": 333, "width": 333},
+        {"title": "Dive", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Hammerhead.png", "height": 333, "width": 333},
         {"title": "UWMA", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Pills.png", "height": 333, "width": 333},
         {"title": "Run Flower", "url": "https://stanecek-website-bucket.s3.amazonaws.com/FlowerMouth.png", "height": 333, "width": 333},
         {"title": "Pizza Peye", "url": "https://stanecek-website-bucket.s3.amazonaws.com/Pizza.png", "height": 333, "width": 333},
